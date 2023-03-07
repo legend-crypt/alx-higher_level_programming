@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Get the filename of the script to compile from the environment variable
+SCRIPT_FILE=$PYFILE
+
+# Create the filename of the compiled bytecode file by appending 'c' to the filename
+BYTECODE_FILE="${SCRIPT_FILE}c"
+
+# Compile the script and save the bytecode to a file
+python3 -m compileall -b "${SCRIPT_FILE}" && mv "${SCRIPT_FILE}c" "${BYTECODE_FILE}"
+
