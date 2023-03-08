@@ -10,7 +10,7 @@ int check_cycle(listint_t *list)
 {
 	if (list == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 	listint_t *fast = list->next;
 	listint_t *slow = list;
@@ -22,7 +22,7 @@ int check_cycle(listint_t *list)
 			return (1);
 		}
 		fast = list->next->next;
-		slow = list->next
+		slow = list->next;
 	}
 	return (0);
 }
