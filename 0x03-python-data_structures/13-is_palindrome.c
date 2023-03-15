@@ -5,6 +5,11 @@ int is_palindrome(listint_t **head) {
   int nums[CAPACITY];
   int length = 0;
 
+  if (*head == NULL)
+  {
+	return 1;
+  }
+
   for (listint_t *temp = *head; temp; temp = temp->next)
     nums[length++] = temp->n;
 
