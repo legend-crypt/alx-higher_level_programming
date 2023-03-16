@@ -10,7 +10,7 @@ def weight_average(my_list=[]):
     Return a the average a weighted list
 
     """
-    numerator = 1
+    numerator = 0
     denomerator = 0
     if len(my_list) == 0:
         return 0
