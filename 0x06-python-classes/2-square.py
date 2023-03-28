@@ -2,7 +2,9 @@
 
 class Square:
     """
-    This class defines a square
+    This class defines a square of private instance `size`
+    raises a ValueError when the size is less than 0 and
+    typeerror when the size is not an integer
     """
     def __init__(self, size=0):
         """
@@ -10,15 +12,21 @@ class Square:
         and also greater than 0
 
         Args:
-            size: of  the square
+            size (int): of  the square
+
         """
-        self.set_size = size
+        self.set_size(size)
 
     def set_size(self, size):
         """
-        This function sets the size
+        This function sets the size with a value of int
+        greater
+
         Args:
-            size: should be an int and also greater than 0
+            size (int): should be an int and also greater than 0
+        ValueError: when the size is less than 0
+        TypeError: when the size is not an integer
+
         """
         try:
             if size < 0:
@@ -26,4 +34,4 @@ class Square:
             else:
                 self.__size = size
         except TypeError:
-            print("size must be an integer")
+            raise TypeError("size must be an integer")
