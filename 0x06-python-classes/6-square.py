@@ -10,7 +10,7 @@ class Square:
     raises a ValueError when the size is less than 0 and
     typeerror when the size is not an integer
     """
-    def __init__(self, value=0, pos_value=(0, 0)):
+    def __init__(self, value=0, position=(0, 0)):
         """
         This function initialize the class with a size of type int
         and also greater than 0
@@ -21,7 +21,7 @@ class Square:
 
         """
         self.size = value
-        self.position = pos_value
+        self.__position = position
 
     @property
     def size(self):
@@ -62,10 +62,10 @@ class Square:
         Return:
             tuple: the positon
         """
-        return self.__pos_value
+        return self.__position
 
     @position.setter
-    def position(self, pos_value=(0, 0)):
+    def position(self, value):
         """
         Set the position of the the square based the value
         inputed with 2 positive intergers
@@ -74,12 +74,12 @@ class Square:
                         positive tuples
         """
         try:
-            if pos_value[0] or pos_value[1] < 0:
+            if value[0] or value[1] < 0:
                 raise TypeError("position must be a tuple of positive integers")
-            elif len(pos_value) < 2:
+            elif len(value) < 2:
                 raise TypeError("postion must be a tupele of 2 positive integers")
             else:
-                self.__pos_value = pos_value
+                self.__position = value
         except TypeError:
             print("position must be a tuple of 2 positive integers")
 
@@ -91,7 +91,7 @@ class Square:
             int: the area of the square
         """
 
-        return self.__value * self.__value
+        return self.__value ** 2
 
     def my_print(self):
         """
@@ -99,13 +99,18 @@ class Square:
         if the size is 0 it will an empty line
         """
 
-        if self.__value == 0:
+        if self.__value <= 0:
             print("")
-        else:
-            for i in range(self.__value):
-                for idx in range(self.__pos_value[0]):
-                    print(" ")
 
-                for k in range(self.__value):
-                    print("#", end="")
+        if self.__position[1] > 0:
+            for a in range(self.__position[1]):
                 print("")
+
+        for i in range(self.__value):
+            if self.__position[0] > 0:
+                for idx in range(self.__position[0]):
+                    print(" ", end="")
+
+            for k in range(self.__value):
+                print("#", end="")
+            print("")
