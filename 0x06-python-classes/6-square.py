@@ -103,6 +103,8 @@ class Square:
             print("")
         else:
             for i in range(self.__value):
+                for idx in range(self.__pos_value[0]):
+                    print(" ")
 
                 for k in range(self.__value):
                     print("#", end="")
