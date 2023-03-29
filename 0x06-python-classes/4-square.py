@@ -10,18 +10,29 @@ class Square:
     raises a ValueError when the size is less than 0 and
     typeerror when the size is not an integer
     """
-    def __init__(self, size=0):
+    def __init__(self, value=0):
         """
         This function initialize the class with a size of type int
         and also greater than 0
 
         Args:
-            size (int): of  the square
+            size (int): of  the the size of the square
 
         """
-        self.set_size(size)
+        self.size = value
 
-    def set_size(self, size):
+    @property
+    def size(self):
+        """
+        This a getter method for getting the size of the 
+        square
+        Return:
+            int: the size of the square
+        """
+        return self.__value
+
+    @size.setter
+    def size(self, value):
         """
         This function sets the size with a value of int
         greater
@@ -33,11 +44,21 @@ class Square:
 
         """
         try:
-            if size < 0:
+            if value < 0:
                 raise ValueError("size must be >= 0")
-            elif isinstance(size, float):
+            elif isinstance(value, float):
                 raise TypeError("size must be an integer")
             else:
-                self.__size = size
+                self.__value = value
         except TypeError:
             raise TypeError("size must be an integer")
+
+    def area(self):
+        """
+        Returns the area of the square
+
+        Returns:
+            int: the area of the square
+        """
+
+        return self.__value * self.__value
