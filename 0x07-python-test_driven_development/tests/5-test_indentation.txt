@@ -1,0 +1,17 @@
+text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("hello am lord . konadu : kweku? i hope you good")
+hello am lord .
+
+ konadu :
+
+ kweku?
+
+ i hope you good>>>
+>>> text_indentation(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "5-text_indentation.py", line 15, in text_indentation
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+>>> text_indentation('k')
+k>>>

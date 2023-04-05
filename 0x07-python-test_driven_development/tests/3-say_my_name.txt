@@ -1,0 +1,20 @@
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+    >>> say_my_name("lord", "konadu")
+    My name is lord konadu
+
+    >>> say_my_name(2) #doctest: +IGNORE_EXCEPTION_DETAIL
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+    >>> say_my_name("lord") # doctest: +NORMALIZE_WHITESPACE
+    My name is lord
+
+    >>> say_my_name("", "konadu") # doctest: +NORMALIZE_WHITESPACE
+    My name is konadu
+
+    Raises an exception if last name is not a string
+    >>> say_my_name("lord", 4) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name("", "") # doctest: +NORMALIZE_WHITESPACE

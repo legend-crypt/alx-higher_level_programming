@@ -17,7 +17,6 @@ def add_integer(a, b=98):
             int: the sum of the operation
         Raises:
             TypeError: if a or b is not int
-
     """
 
     chk_a = isinstance(a, (int, float))

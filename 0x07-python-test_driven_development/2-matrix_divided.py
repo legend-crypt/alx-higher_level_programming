@@ -19,8 +19,6 @@ def matrix_divided(matrix, div):
             ZeroDivisionError: if div is 0
     """
 
-    new_matrix = matrix.copy()
-
     try:
         if not isinstance(matrix, list):
             raise TypeError("matrix must be a matrix (list of lists) \
@@ -35,8 +33,8 @@ def matrix_divided(matrix, div):
                             of integers/floats")
                 elif not isinstance(div, (int, float)):
                     raise TypeError("div must be a number")
-                else:
-                    new_matrix[i][a] = (round(a / div, 2))
+            else:
+                new_matrix = [[round(elem / div, 2) for elem in row] for row in matrix]
         return new_matrix
     except ZeroDivisionError:
         print("division by 0")
