@@ -78,3 +78,6 @@ class Rectangle:
                     break
                 rect += "\n"
         return rect
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.width, self.height)
