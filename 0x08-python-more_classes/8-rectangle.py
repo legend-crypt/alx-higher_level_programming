@@ -103,9 +103,9 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
         else:
-            if eval(rect_1.area > rect_2.area):
-                return rect_1
-            elif eval(rect_2.area > rect_1.area):
+            if rect_1.area.__lt__(rect_2.area):
                 return rect_2
-            elif eval(rect_1.area == rect_2.area):
+            elif rect_1.area.__gt__(rect_2.area):
+                return rect_1
+            elif rect_1.area.__eq__(rect_2.area):
                 return rect_1
