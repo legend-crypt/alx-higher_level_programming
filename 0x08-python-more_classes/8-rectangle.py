@@ -12,6 +12,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -77,7 +78,7 @@ class Rectangle:
         else:
             rect = ""
             for i in range(self.height):
-                rect += "#"* self.width
+                rect += "{}".format(self.print_symbol) * self.width
                 if i == self.height - 1:
                     break
                 rect += "\n"
@@ -92,3 +93,19 @@ class Rectangle:
             raise AttributeError("cannot delete again")
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        else:
+            if eval(rect_1.area > rect_2.area):
+                return rect_1
+            elif eval(rect_2.area > rect_1.area):
+                return rect_2
+            elif eval(rect_1.area == rect_2.area):
+                return rect_1
