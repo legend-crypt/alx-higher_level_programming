@@ -23,4 +23,4 @@ def say_my_name(first_name, last_name=""):
     elif first_name is None or last_name is None:
         return None
     else:
-        print(f" My name is {first_name} {last_name}")
+        print(f"My name is {first_name} {last_name}")
