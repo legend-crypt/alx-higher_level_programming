@@ -1,0 +1,50 @@
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+>>> matrix = [
+...     [4, 5, 6],
+...     [4, 5, 6, 5]
+... ]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line 30, in matrix_divided
+    raise TypeError("Each row of the matrix must have the \
+TypeError: Each row of the matrix must have the same size
+>>> matrix = [
+...     [4, 5, 6, 5],
+...     [4, 5, 6, 5],
+...     [4, 5, 3, 44]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[1.33, 1.67, 2.0, 1.67], [1.33, 1.67, 2.0, 1.67], [1.33, 1.67, 1.0, 14.67]]
+>>> print(matrix)
+[[4, 5, 6, 5], [4, 5, 6, 5], [4, 5, 3, 44]]
+>>> matrix = [
+...     (3, 4, 4, 5),
+...     (4, 4, 5, 5,)
+... ]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line 33, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) \
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix)
+[(3, 4, 4, 5), (4, 4, 5, 5)]
+
+>>> matrix = [
+...     [14, 10, 3, 'y'],
+...     [14, 30, 5, 53]
+... ]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line 37, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) \
+TypeError: matrix must be a matrix (list of lists) of integers/floats
