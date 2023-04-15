@@ -23,7 +23,7 @@ def add_integer(a, b=98):
     chk_b = isinstance(b, (int, float))
 
     if chk_a and chk_b:
-        return a + b
+        return int(a + b)
     elif chk_a is True and chk_b is False:
         raise TypeError("b must be an integer")
     elif chk_a is False and chk_b is True:
