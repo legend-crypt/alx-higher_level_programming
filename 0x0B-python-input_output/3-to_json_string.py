@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import json
+"""
+    help convert datatype to json
+"""
 
-"""
-    access a text as a json repr
-"""
+import json
 
 
 def to_json_string(my_obj):
