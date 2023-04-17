@@ -15,5 +15,5 @@ def from_json_string(my_obj):
             my_obj(json): convert string to json
     """
 
-    json_repr = json.load(my_obj)
+    json_repr = json.loads(my_obj)
     return json_repr
