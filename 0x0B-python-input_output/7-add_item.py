@@ -19,13 +19,13 @@ def command_args_to_json():
 
     command_arg_len = len(sys.argv)
     filename = "add_item.json"
-    my_list = []
+    try:
+        my_list = load_from_json_file(filename)
+    except FileNotFoundError:
+        my_list = []
     for i in range(1, command_arg_len):
         my_list.append(sys.argv[i])
-
     save_to_json_file(my_list, filename)
-    data = load_from_json_file(filename)
-    return data
 
 
 if __name__ == "__main__":
