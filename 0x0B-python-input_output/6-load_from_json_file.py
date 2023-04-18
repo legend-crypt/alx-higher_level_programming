@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 
 """
-    No module was imported
+    helper for working in json
 """
+import json
+
+
 def load_from_json_file(filename):
     """
         Create a new file a new json file
@@ -10,5 +13,6 @@ def load_from_json_file(filename):
         Args:
             filename: a new file
     """
-    with open(filename, mode='w', encoding="utf-8") as file:
-        file.close()
+    with open(filename, mode='r', encoding="utf-8") as file:
+        data = json.load(file)
+    return data
