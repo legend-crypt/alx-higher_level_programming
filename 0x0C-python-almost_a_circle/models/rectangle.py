@@ -113,18 +113,19 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
             assign the the attribute based on the args position
 
             Args:
-                1st argument should be the id attribute
-                2nd argument should be the width attribute
-                3rd argument should be the height attribute
-                4th argument should be the x attribute
-                5th argument should be the y attribute
+                id (int): The id attribute
+                width (int): the width attribute
+                height (int): the height attribute
+                x (int): the x attribute
+                y (int): the y attribute
         """
-        self.id = args[0]
+        if args:
+            self.id = args[0]
         if len(args) >= 2:
             self.__width = args[1]
         if len(args) >= 3:
@@ -133,3 +134,13 @@ class Rectangle(Base):
             self.__x = args[3]
         if len(args) >= 5:
             self.__y = args[4]
+
+        if not args:
+            if "height" in kwargs and kwargs["height"] is not None:
+                self.__height = kwargs["height"]
+            if "width" in kwargs and kwargs["width"] is not None:
+                self.__width = kwargs["width"]
+            if "x" in kwargs and kwargs["x"] is not None:
+                self.__x = kwargs["x"]
+            if "y" in kwargs and kwargs["y"] is not None:
+                self.__y = kwargs["y"]
