@@ -88,3 +88,11 @@ class Rectangle(Base):
             and return it
         """
         return self.__width * self.__height
+
+    def display(self):
+        #if self.__width or self.__height == 0:
+            #print()
+        for i in range(self.__height):
+            for k in range(self.__width):
+                print("#", end="")
+            print()
