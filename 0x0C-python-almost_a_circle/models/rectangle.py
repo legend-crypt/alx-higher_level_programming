@@ -90,8 +90,12 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        #if self.__width or self.__height == 0:
-            #print()
+        """
+            takes the height and width attribute of the class
+            and print the the rectangle using #
+        """
+        # if self.__width or self.__height == 0:
+        # print()
         for i in range(self.__height):
             for k in range(self.__width):
                 print("#", end="")
