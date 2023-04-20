@@ -136,6 +136,8 @@ class Rectangle(Base):
             self.__y = args[4]
 
         if not args:
+            if "id" in kwargs and kwargs["id"] is not None:
+                self.id = kwargs["id"]
             if "height" in kwargs and kwargs["height"] is not None:
                 self.__height = kwargs["height"]
             if "width" in kwargs and kwargs["width"] is not None:
