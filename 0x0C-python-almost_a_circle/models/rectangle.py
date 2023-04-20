@@ -104,7 +104,11 @@ class Rectangle(Base):
         """
         # if self.__width or self.__height == 0:
         # print()
+        for y_axis in range(self.__y):
+            print()
         for i in range(self.__height):
+            for x_axis in range(self.__x):
+                print(" ", end="")
             for k in range(self.__width):
                 print("#", end="")
             print()
