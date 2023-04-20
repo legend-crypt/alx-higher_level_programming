@@ -112,3 +112,24 @@ class Rectangle(Base):
             for k in range(self.__width):
                 print("#", end="")
             print()
+
+    def update(self, *args):
+        """
+            assign the the attribute based on the args position
+
+            Args:
+                1st argument should be the id attribute
+                2nd argument should be the width attribute
+                3rd argument should be the height attribute
+                4th argument should be the x attribute
+                5th argument should be the y attribute
+        """
+        self.id = args[0]
+        if len(args) >= 2:
+            self.__width = args[1]
+        if len(args) >= 3:
+            self.__height = args[2]
+        if len(args) >= 4:
+            self.__x = args[3]
+        if len(args) >= 5:
+            self.__y = args[4]
