@@ -71,4 +71,9 @@ class Square(Rectangle):
         """
             Convert clas attribute to dictionary and return it
         """
-        return self.__dict__
+        return {
+                "id": self.id,
+                "x": self.x,
+                "size": self.size,
+                "y": self.y
+                }
