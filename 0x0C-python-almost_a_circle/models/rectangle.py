@@ -146,3 +146,15 @@ class Rectangle(Base):
                 self.__x = kwargs["x"]
             if "y" in kwargs and kwargs["y"] is not None:
                 self.__y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+            Returns the dictionary respresentation of the attributes
+        """
+        return {
+                "x": self.__x,
+                "y": self.__y,
+                "id": self.id,
+                "height": self.__height,
+                "width": self.__width
+                }
