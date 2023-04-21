@@ -35,19 +35,19 @@ class Base:
         json_repr = json.dumps(list_dictionaries)
         return json_repr
 
-    @classmethod
-    def save_to_file(cls, list_objs):
-        """
-            writes the JSON strin representation of list_objs to a file
-        """
-        fname = cls.__name__ + ".json"
-        content = []
-
-        if list_objs is not None:
-            for obj in list_objs:
-                obj = obj.to_dictionary()
-                json_dict = json.loads(cls.to_json_string(obj))
-                content.append(json_dict)
-
-        with open(fname, "w") as jfile:
-            json.dump(content, jfile)
+     @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", newline="") as f:
+            writer = csv.writer(f)
+            if list_objs is None:
+                return
+            if cls.__name__ == "Rectangle":
+                writer.writerow(["id", "width", "height", "x", "y"])
+                for obj in list_objs:
+                    writer.writerow(
+                            [obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                writer.writerow(["id", "size", "x", "y"])
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
