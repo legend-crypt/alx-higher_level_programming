@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 """
-    No module was imported
+    json package is imported to serve as a helping
+    function
 """
+import json
 
 
 class Base:
@@ -18,3 +20,17 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+            Return the json representation of
+            class atrributes
+
+            Args:
+                list_dictionaries(dict): the dictionary to be converted json
+        """
+        if list_dictionaries is None:
+            return "[]"
+        json_repr = json.dumps(list_dictionaries)
+        return json_repr
