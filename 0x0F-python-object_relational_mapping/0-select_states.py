@@ -1,34 +1,25 @@
 #!/usr/bin/python3
+"""Lists all states from the database hbtn_0e_0_usa"""
 
-"""
-    Import for mysql connection
-"""
-import MySQLdb
-import sys
+if __name__ == '__main__':
+    from sys import argv
+    import MySQLdb as mysql
 
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+    try:
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    except Exception:
+        print('Failed to connect to the database')
+        exit(0)
 
-def display(username, password, database):
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
-        )
-    cur = db.cursor()
-    statement = "SELECT * FROM states ORDER BY states.id ASC"
-    cur.execute(statement)
-    rows = cur.fetchall()
-    for row in rows:
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
+
+    result_query = cursor.fetchall()
+
+    for row in result_query:
         print(row)
-    cur.close()
+
+    cursor.close()
     db.close()
-        
-if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    display(username, password, database)
