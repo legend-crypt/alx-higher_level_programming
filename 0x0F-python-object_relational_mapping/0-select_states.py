@@ -24,6 +24,8 @@ def display(username, password, database):
     rows = cur.fetchall()
     for row in rows:
         print(row)
+    cur.close()
+    db.close()
         
 if __name__ == "__main__":
     username = sys.argv[1]
