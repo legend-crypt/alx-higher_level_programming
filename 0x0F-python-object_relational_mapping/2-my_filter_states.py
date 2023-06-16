@@ -13,9 +13,9 @@ if __name__ == '__main__':
         exit(0)
 
     cursor = db.cursor()
-
-    cursor.execute("SELECT * FROM states \
-        WHERE name LIKE BINARY 'N%' ORDER BY id ASC;")
+    query = "SELECT * FROM states \
+        WHERE name = %s ORDER BY id ASC;"
+    cursor.execute(query, (argv[4],))
 
     result_query = cursor.fetchall()
 
