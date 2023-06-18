@@ -6,6 +6,9 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
+    if (len(argv) != 5):
+        print('Use: username, password, database name, state name')
+        exit(1)
     try:
         db = MySQLdb.connect(
             host="localhost",
