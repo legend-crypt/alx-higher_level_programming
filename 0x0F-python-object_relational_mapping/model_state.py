@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+"""
+    Create a states table
+"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
