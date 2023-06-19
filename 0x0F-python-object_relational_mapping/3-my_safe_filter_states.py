@@ -22,10 +22,11 @@ if __name__ == "__main__":
         exit(0)
     cur = db.cursor()
     searched = argv[4]
-    statement = "SELECT * FROM states WHERE name = BINARY %s \
-        ORDER BY states.id ASC"
-    cur.execute(statement, (searched,))
-    row = cur.fetchall()
-    print(row)
+    statement = "SELECT * FROM states WHERE name = BINARY '{:s}' \
+        ORDER BY states.id ASC".format(searched)
+    cur.execute(statement)
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
