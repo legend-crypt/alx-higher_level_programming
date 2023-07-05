@@ -1,15 +1,14 @@
 #!/usr/bin/python3
+"""Takes in a URL, sends a request to the URL and displays the body"""
 
-"""
-import for getting command line args and urls request
-"""
-from requests import get
-from sys import argv
 
 if __name__ == "__main__":
-    url = argv[1]
-    response = get(url)
-    if response.status_code < 400:
-        print(response)
+    import requests
+    import sys
+
+    res = requests.get(sys.argv[1])
+
+    if res.status_code >= 400:
+        print("Error code: {}".format(res.status_code))
     else:
-        print(f"Error code: {response.status_code}")
+        print(res.text)
