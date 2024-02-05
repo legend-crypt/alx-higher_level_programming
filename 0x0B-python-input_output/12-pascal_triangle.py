@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+    no module was imported
+"""
+
+
 def pascal_triangle(n):
     """
         Returns a list of lists of integers representing
