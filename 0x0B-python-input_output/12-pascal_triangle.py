@@ -16,12 +16,11 @@ def pascal_triangle(n):
             triangle(list): a list of list reprensenting the
                 pascal triangle
     """
-    triangle = []
-    for i in range(n):
-        level = 11 ** i
-        level = str(level)
-        values = []
-        for j in level:
-            values.append(j)
-        triangle.append(values)
+    triangle = [[1]]
+    for i in range(n - 1):
+        temp = [0] + triangle[-1] + [0]
+        row = []
+        for j in range(len(triangle[-1])+ 1):
+            row.append(temp[j] + temp[j + 1])
+        triangle.append(row)
     return triangle
