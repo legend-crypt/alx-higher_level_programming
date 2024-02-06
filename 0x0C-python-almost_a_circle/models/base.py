@@ -61,6 +61,24 @@ class Base:
             Returns:
                 Returns a new class with attributes set
         """
-        instance = cls(1, 2)
+        if cls.__name__ == "Rectangle":
+            instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            instance = cls(2)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a file"""
+        filename = cls.__name__+".json"
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
+                json_string = file.read()
+        except FileNotFoundError:
+            return []
+        instances = []
+        dict_obj = cls.from_json_string(json_string)
+        for item in dict_obj:
+            instances.append(cls.create(**item))
+        return instances
