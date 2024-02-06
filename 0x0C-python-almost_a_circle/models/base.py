@@ -61,6 +61,6 @@ class Base:
             Returns:
                 Returns a new class with attributes set
         """
-        instance = cls.__new__(cls)
+        instance = cls(1, 2)
         instance.update(**dictionary)
         return instance

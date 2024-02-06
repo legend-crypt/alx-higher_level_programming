@@ -127,13 +127,13 @@ class Rectangle(Base):
             if "id" in kwargs and kwargs["id"] is not None:
                 self.id = kwargs["id"]
             if "height" in kwargs and kwargs["height"] is not None:
-                self.__height = kwargs["height"]
+                self.height = kwargs["height"]
             if "width" in kwargs and kwargs["width"] is not None:
-                self.__width = kwargs["width"]
+                self.width = kwargs["width"]
             if "x" in kwargs and kwargs["x"] is not None:
-                self.__x = kwargs["x"]
+                self.x = kwargs["x"]
             if "y" in kwargs and kwargs["y"] is not None:
-                self.__y = kwargs["y"]
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
         """
