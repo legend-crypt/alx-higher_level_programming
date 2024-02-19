@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Creates City table and list the cities in the database"""
 from model_state import State, Base
 from model_city import City
