@@ -1,10 +1,11 @@
+#!/usr/bin/python3
+
 """Creates City table and list the cities in the database"""
 from model_state import State, Base
 from sqlalchemy import (
     create_engine, Integer,
     String, Column, ForeignKey
 )
-from sqlalchemy import *
 from sqlalchemy.orm import sessionmaker
 from sys import argv, exit
 
