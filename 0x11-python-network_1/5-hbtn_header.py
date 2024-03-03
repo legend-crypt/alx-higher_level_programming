@@ -9,5 +9,5 @@ from requests import get
 if __name__ == "__main__":
     url = argv[1]
     body = get(url)
-    head = body.headers['X-Request-Id']
+    head = body.headers.get('X-Request-Id')
     print(head)
